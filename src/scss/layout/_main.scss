@@ -4,7 +4,7 @@ $secondary-color: #fc888e;
 
 html,
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -22,12 +22,12 @@ body {
   background: transparent;
   border: 0;
   cursor: pointer;
-  font-family: 'Lobster', cursive;
+  font-family: "Lobster", cursive;
   font-size: 42px;
   height: 60px;
   outline: none;
   padding: 0 20px;
-  transition: transform .5s ease;
+  transition: transform 0.5s ease, opacity 200ms, visibility 200ms;
 
   &:hover {
     transform: scale(1.15);

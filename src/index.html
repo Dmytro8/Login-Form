@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Lato|Lobster&amp;subset=latin-ext" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/styles.min.css">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato|Lobster&amp;subset=latin-ext"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/styles.min.css" />
     <title>Virtua Frontend Internship Test</title>
   </head>
   <body>
@@ -14,8 +22,42 @@
       <button id="show-popup-form" class="btn btn-main">Click me!</button>
       <!-- Display success message below -->
     </section>
-    <div class="popup">
+    <div class="popup" id="popup">
       <!-- Here goes your popup form HTML code -->
+      <div class="popup__container">
+        <i id="icon-close-form" class="fas fa-times-circle"></i>
+        <div class="header">
+          <h2>Login</h2>
+        </div>
+        <form id="form" class="form">
+          <div class="form__control">
+            <input
+              class="form__control__input"
+              type="email"
+              placeholder="E-mail"
+              id="email"
+            />
+          </div>
+          <div class="form__control">
+            <input
+              class="form__control__input"
+              type="password"
+              placeholder="Password"
+              id="password"
+            />
+          </div>
+          <div class="form__control">
+            <input
+              class="form__control__input"
+              class="form__control__input"
+              type="checkbox"
+              id="checkbox"
+            />
+            <label for="checkbox">I agree to terms & conditions.</label>
+          </div>
+          <button>Submit</button>
+        </form>
+      </div>
     </div>
     <script src="js/index.min.js" charset="utf-8"></script>
   </body>

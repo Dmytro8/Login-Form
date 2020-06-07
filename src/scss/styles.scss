@@ -1,2 +1,107 @@
 // Here goes your CSS
-@import 'layout/main';
+@import "layout/main";
+@import "_vars.scss";
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  visibility: hidden;
+  transform: translateX(-135px) translateY(-135px);
+  transition: opacity 200ms, visibility 200ms;
+  &__container {
+    background-color: white;
+    border-radius: 4px;
+    width: 270px;
+    .fa-times-circle {
+      position: absolute;
+      right: 0;
+      font-size: 28px;
+      transform: translateX(7px) translateY(-7px);
+      cursor: pointer;
+    }
+    .header {
+      text-align: center;
+      padding-top: 30px;
+      h2 {
+        font-family: "Lobster", cursive;
+      }
+    }
+    .form {
+      padding: 0 35px 35px 35px;
+      &__control {
+        margin-bottom: 15px;
+        &__input {
+          border: 1px solid black;
+          display: block;
+          font-size: 12px;
+          padding: auto {
+            left: 20px;
+            top: 12px;
+            bottom: 12px;
+          }
+          width: 100%;
+          box-sizing: border-box;
+          &:focus {
+            outline: none;
+          }
+        }
+        #checkbox {
+          padding: 0;
+          height: initial;
+          width: initial;
+          margin-bottom: 0;
+          display: none;
+          cursor: pointer;
+          &:checked + label:after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0px;
+            left: 6px;
+            width: 4px;
+            height: 10px;
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            transform: rotate(45deg);
+          }
+        }
+        label {
+          position: relative;
+          cursor: pointer;
+          font-size: 13px;
+          &:before {
+            content: "";
+            background-color: transparent;
+            border: 1px solid black;
+            padding: 8px;
+            display: inline-block;
+            position: relative;
+            vertical-align: sub;
+            cursor: pointer;
+            margin-right: 8px;
+          }
+        }
+      }
+      button {
+        background-color: black;
+        border: 2px solid black;
+        color: #fff;
+        display: block;
+        text-transform: uppercase;
+        font-size: 12px;
+        padding: 10px;
+        height: 40px;
+        margin-top: 20px;
+        width: 100%;
+        cursor: pointer;
+        &:hover {
+          background-color: $buttonBGColor;
+          border: 2px solid $buttonBGColor;
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+}
