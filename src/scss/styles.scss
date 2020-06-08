@@ -1,6 +1,7 @@
 // Here goes your CSS
 @import "layout/main";
 @import "_vars.scss";
+
 .popup {
   position: absolute;
   top: 50%;
@@ -110,7 +111,24 @@
         &:focus {
           outline: none;
         }
+        &:disabled {
+          background-color: grey;
+          cursor: default;
+          border: 2px solid grey;
+        }
       }
     }
+  }
+}
+
+#successMessage {
+  font-family: "Lobster", cursive;
+  font-size: 50px;
+  display: none;
+  opacity: 0;
+  transition: transform 0.5s ease;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.15);
   }
 }

@@ -6,6 +6,8 @@ const password = document.getElementById("password");
 const checkbox = document.getElementById("checkbox");
 const buttonOpenForm = document.getElementById("show-popup-form");
 const iconCloseForm = document.getElementById("icon-close-form");
+const successMessage = document.getElementById("successMessage");
+const submitButton = document.getElementById("submitButton");
 
 buttonOpenForm.addEventListener("click", (e) => {
   popup.style.opacity = "1";
@@ -29,6 +31,16 @@ iconCloseForm.addEventListener("click", (e) => {
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   checkInputs();
+  if (!checkError(email) && !checkError(password) && !checkError(checkbox)) {
+    submitButton.disabled = true;
+    setTimeout(() => {
+      popup.style.opacity = "0";
+      popup.style.visibility = "hidden";
+      buttonOpenForm.style.display = "none";
+      successMessage.style.opacity = "1";
+      successMessage.style.display = "block";
+    }, 3000);
+  }
 });
 
 function checkInputs() {
@@ -66,6 +78,12 @@ function checkInputs() {
   } else {
     removeError(checkbox);
   }
+}
+
+function checkError(element) {
+  if (element.classList.contains("error")) {
+    return true;
+  } else return false;
 }
 
 function clearValue(input) {
